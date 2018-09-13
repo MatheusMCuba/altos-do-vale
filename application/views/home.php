@@ -8,11 +8,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="<?php echo $base_path?>css/grid.min.css">
     <link rel="stylesheet" href="<?php echo $base_path?>css/style.css">
+    <link rel="stylesheet" href="<?php echo $base_path?>css/gallery.css">
+    <link rel="stylesheet" href="<?php echo $base_path?>css/roses.css">
     <title>Altos do Vale</title>
 </head>
 <body>
 <nav class="navbar flex-center">
-    <div class="w-100 flex-center space-around">
+    <div class="w-100 flex-center space-between">
         <a href="#" class="navbar-logo" rel="noopener">
             <img src="<?php echo $base_path?>images/logo.png" alt="Logo Altos do Vale">
         </a>
@@ -40,8 +42,18 @@
         </div>
     </div>
 </nav>
-<section>
-
+<div class="roses">
+    <div class="rose">
+        <img src="<?php echo $base_path?>images/petala.png">
+    </div>
+    <div class="rose">
+        <img src="<?php echo $base_path?>images/petala2.png">
+    </div>
+    <div class="rose">
+        <img src="<?php echo $base_path?>images/petala3.png">
+    </div>
+</div>
+<section class="banners">
 </section>
 <section class="chamada section-padding">
     <div class="container text-white">
@@ -63,10 +75,45 @@
         </div>
     </div>
 </section>
+<section class="gallery">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="gallery-wrapper">
+                <div class="gallery-image">
+                    <img src="<?php echo $base_path?>images/gallery/image.jpg">
+                </div>
+                <div class="gallery-image">
+                    <img src="<?php echo $base_path?>images/gallery/image2.jpg">
+                </div>
+                <div class="gallery-image">
+                    <img src="<?php echo $base_path?>images/gallery/image3.jpg">
+                </div>
+                <div class="gallery-image">
+                    <img src="<?php echo $base_path?>images/gallery/image4.jpg">
+                </div>
+                <div class="gallery-image">
+                    <img src="<?php echo $base_path?>images/gallery/image5.jpg">
+                </div>
+                <div class="gallery-image w-100">
+                    <img src="<?php echo $base_path?>images/gallery/image6.jpg">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 <section class="instagram section-padding">
     <div class="container text-center">
-        <h1 class="uppercase text-white">Instagram</h1>
-        <h2>Altos do Vale</h2>
+        <div class="row">
+            <div class="col">
+                <h1 class="uppercase text-white">Instagram</h1>
+                <h2>Altos do Vale</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col mt-5">
+                <div id="instafeed"></div>
+            </div>
+        </div>
     </div>
 </section>
 <section class="newsletter section-padding">
@@ -161,6 +208,9 @@
         </div>
     </div>
 </footer>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/stevenschobert/instafeed.js@1.4.1/instafeed.min.js"></script>
+<script src="<?php echo $base_path?>/js/main.js"></script>
 <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js" integrity="sha384-kW+oWsYx3YpxvjtZjFXqazFpA7UP/MbiY4jvs+RWZo2+N94PFZ36T6TFkc9O3qoB" crossorigin="anonymous"></script>
 </body>
 </html>

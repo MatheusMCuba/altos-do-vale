@@ -1,0 +1,18 @@
+.rose{
+    position: absolute;
+}
+.rose:nth-child(1){
+    top: 102px;
+    right: 20px;
+}
+
+.rose:nth-child(2){
+    top: 655px;
+    left: 35px;
+}
+
+.rose:nth-child(3){
+    top: 1100px;
+    right: -90px;
+    z-index: 10;
+}
