@@ -1,0 +1,122 @@
+.navbar{
+    padding: 32px 45px;
+    position: relative;
+}
+
+.navbar::after{
+    content: '';
+    height: 159px;
+    width: 154px;
+    background: url(../images/flare.png) no-repeat;
+    background-size: cover;
+    position: absolute;
+    bottom: -78px;
+    left: calc(50% - 85px);
+    z-index: 20;
+}
+
+.navbar > div{
+    width: 80%;
+}
+
+.navbar ul{
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+    padding: 0;
+    width: 50%;
+    color: #999999;
+    text-transform: uppercase;
+}
+
+.navbar ul li {
+    font-size: 15px;
+    font-weight: lighter;
+    letter-spacing: 7px;
+}
+
+.navbar ul li.active {
+    font-weight: bolder;
+    color: white;
+}
+
+.navbar-logo{
+    text-align: center;
+}
+
+.navbar-logo img{
+    width: 147px;
+}
+
+.menu-icon{
+    display: none;
+}
+
+@media (max-width: 1200px) {
+    .navbar::after{
+        display: none;
+    }
+
+    .navbar{
+        padding: 20px 25px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 110;
+        background: url(../images/background.jpg);
+        background-size: 50% 50%;
+        height: 100px;
+    }
+
+    .navbar > div{
+        width: 100%;
+        display: grid;
+        grid-template-columns: 33% 33% 33%;
+    }
+
+    .navbar-logo img{
+        width: 90px;
+    }
+
+    .navbar .social{
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .navbar .social a{
+        background-color: white;
+    }
+
+    .menu-icon{
+        display: block;
+    }
+
+    .sidebar{
+        display: none !important;
+    }
+
+    .sidebar.active{
+        position: fixed;
+        top: 100px;
+        width: 100% !important;
+        height: auto;
+        left: 0;
+        display: initial !important;
+        z-index: 1000;
+        background: url(../images/background.jpg);
+        background-size: 50% 50%;
+        min-height: 100%;
+    }
+
+    .sidebar.active li{
+        width: 80%;
+        margin-left: 10%;
+        padding: 20px;
+        text-align: center;
+        height: 25%;
+        font-size: 25px;
+        border-bottom: 1px solid white;
+    }
+}

@@ -37,9 +37,15 @@ function Main(){
         });
     };
 
+    self.ToggleMenu = function(){
+        $('.sidebar').toggleClass('active');
+    };
+
     self.Init = (function(){
         self.InitInstafeed();
         self.InitCarousel();
+
+        $('#btnMenu').click(self.ToggleMenu);
     })();
 }
 

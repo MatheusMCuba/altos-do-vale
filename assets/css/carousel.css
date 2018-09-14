@@ -57,10 +57,80 @@
     height: unset !important;
 }
 
-.main-banner h1{
-    width: 500px;
+.main-banner{
     text-align: right;
-    margin-right: 25px;
+}
+
+.main-banner::before{
+    content: '';
+    position: absolute;
+    height: 560px;
+    width: 560px;
+    background: url(../images/flare.png) no-repeat;
+    background-size: cover;
+    top:  calc(50% - 280px);
+    right: -240px;
+    z-index: 20;
+}
+
+.main-banner h1{
+    width: 50%;
     font-size: 40px;
     font-weight: normal;
+    margin-bottom: 1rem;
+    display: inline-block;
+}
+
+.main-banner .btn-transparent{
+    background-color: rgba(0,0,0,.3);
+}
+
+.main-banner > div{
+    margin-right: 3rem;
+}
+
+@media (max-width: 1200px) {
+    .carousel-item{
+        grid-template-columns: 100%;
+    }
+
+    .carousel-item .main-banner{
+        justify-content: center;
+    }
+
+    .main-banner{
+        text-align: center;
+    }
+
+
+    .slick-arrow{
+        top: unset;
+        bottom: -20px;
+    }
+
+    .slick-next{
+        right: 35%;
+    }
+
+    .slick-prev{
+        left: 35%;
+    }
+
+    .carousel-item [data-src]::after{
+        display: none;
+    }
+
+    .main-banner h1{
+        width: 80%;
+        font-size: 40px;
+        margin-bottom: 3rem;
+    }
+
+    .main-banner > div{
+        margin-right: 0;
+    }
+
+    .main-banner::before{
+        display: none;
+    }
 }

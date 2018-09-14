@@ -6,6 +6,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="<?php echo $base_path?>css/navbar.css">
     <link rel="stylesheet" href="<?php echo $base_path?>css/grid.min.css">
     <link rel="stylesheet" href="<?php echo $base_path?>css/style.css">
     <link rel="stylesheet" href="<?php echo $base_path?>css/gallery.css">
@@ -16,55 +17,64 @@
     <title>Altos do Vale</title>
 </head>
 <body>
-<nav class="navbar flex-center">
-    <div class="w-100 flex-center space-between">
-        <a href="#" class="navbar-logo" rel="noopener">
-            <img src="<?php echo $base_path?>images/logo.png" alt="Logo Altos do Vale">
-        </a>
-        <ul class="hidden-mobile">
-            <li class="active">
-                <a href="#" rel="noopener">Home</a>
-            </li>
-            <li>
-                <a href="#" rel="noopener">Empresa</a>
-            </li>
-            <li>
-                <a href="#" rel="noopener">Eventos</a>
-            </li>
-            <li>
-                <a href="#" rel="noopener">Contato</a>
-            </li>
-        </ul>
-        <div class="social flex-center">
-            <a href="#" rel="noopener" class="flex-center">
-                <span class="fab fa-facebook-f"></span>
-            </a>
-            <a href="#" rel="noopener" class="flex-center">
-                <span class="fab fa-instagram"></span>
-            </a>
+<div class="roses">
+    <img class="rose" src="<?php echo $base_path?>images/petala.png">
+    <img class="rose" src="<?php echo $base_path?>images/petala2.png">
+    <img class="rose hidden-mobile" src="<?php echo $base_path?>images/petala3.png">
+</div>
+<header>
+    <div class="container-fluid">
+        <div class="row">
+            <nav class="navbar flex-center">
+                <div class="flex-center space-around">
+                    <div id="btnMenu" class="menu-icon text-white">
+                        <span class="fas fa-bars fa-3x"></span>
+                    </div>
+                    <a href="#" class="navbar-logo" rel="noopener">
+                        <img src="<?php echo $base_path?>images/logo.png" alt="Logo Altos do Vale">
+                    </a>
+                    <ul class="sidebar">
+                        <li class="active">
+                            <a href="#" rel="noopener">Home</a>
+                        </li>
+                        <li>
+                            <a href="#" rel="noopener">Empresa</a>
+                        </li>
+                        <li>
+                            <a href="#" rel="noopener">Eventos</a>
+                        </li>
+                        <li>
+                            <a href="#" rel="noopener">Contato</a>
+                        </li>
+                    </ul>
+                    <div class="social flex-center">
+                        <a href="#" rel="noopener" class="flex-center">
+                            <span class="fab fa-facebook-f"></span>
+                        </a>
+                        <a href="#" rel="noopener" class="flex-center">
+                            <span class="fab fa-instagram"></span>
+                        </a>
+                    </div>
+                </div>
+            </nav>
         </div>
     </div>
-</nav>
-<div class="roses">
-    <div class="rose">
-        <img src="<?php echo $base_path?>images/petala.png">
-    </div>
-    <div class="rose">
-        <img src="<?php echo $base_path?>images/petala2.png">
-    </div>
-    <div class="rose hidden-mobile">
-        <img src="<?php echo $base_path?>images/petala3.png">
-    </div>
-</div>
+</header>
 <section class="carousel">
-    <div class="row mb-0">
-        <div class="col">
+    <div class="container-fluid">
+        <div class="row mb-0">
             <div id="carousel-wrapper" class="w-100">
                 <?php foreach ($listaBanners as $banner): ?>
                     <div>
                         <div class="carousel-item">
                             <div class="main-banner" data-src="<?php echo $banner['imagem_1']?>">
-                                <h1 class="text-white uppercase"><?php echo $banner['descricao']?></h1>
+                                <div>
+                                    <h1 class="text-white uppercase"><?php echo $banner['descricao']?></h1>
+                                    <br/>
+                                    <button class="btn-transparent uppercase mr-1 mt-1">
+                                        Ver este <strong>Evento</strong>
+                                    </button>
+                                </div>
                             </div>
                             <div class="banner hidden-mobile" data-src="<?php echo $banner['imagem_2']?>"></div>
                             <div class="banner hidden-mobile" data-src="<?php echo $banner['imagem_3']?>"></div>
@@ -73,7 +83,6 @@
                 <?php endforeach; ?>
             </div>
         </div>
-
     </div>
 </section>
 <section class="chamada section-padding">

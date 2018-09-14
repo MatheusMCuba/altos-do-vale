@@ -60,41 +60,9 @@ p{
 	margin-bottom: 15px;
 }
 
-.navbar{
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	padding: 32px 45px;
-}
-
-.navbar ul{
-	list-style: none;
-	display: flex;
-	justify-content: space-between;
-	margin: 0;
-    padding: 0;
-    width: 50%;
-	color: #999999;
-	text-transform: uppercase;
-}
-
-.navbar ul li {
-	font-size: 15px;
-	font-weight: lighter;
-	letter-spacing: 7px;
-}
-
-.navbar ul li.active {
-	font-weight: bolder;
-	color: white;
-}
 
 .space-between{
 	justify-content: space-between;
-}
-
-.navbar-logo img{
-	width: 147px;
 }
 
 .uppercase{
@@ -123,6 +91,7 @@ p{
 	letter-spacing: 2px;
 	display: inline-block;
     font-size: 1.5rem;
+	cursor: pointer;
 }
 
 .instagram{
