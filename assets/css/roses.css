@@ -1,5 +1,6 @@
 .rose{
     position: absolute;
+    z-index: 100;
 }
 .rose:nth-child(1){
     top: 102px;
@@ -12,7 +13,13 @@
 }
 
 .rose:nth-child(3){
-    top: 1100px;
-    right: -90px;
+    top: 1070px;
+    right: 0;
     z-index: 10;
+}
+
+@media (max-width: 1200px) {
+    .rose{
+        display: none;
+    }
 }

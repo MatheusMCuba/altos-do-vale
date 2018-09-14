@@ -10,6 +10,9 @@
     <link rel="stylesheet" href="<?php echo $base_path?>css/style.css">
     <link rel="stylesheet" href="<?php echo $base_path?>css/gallery.css">
     <link rel="stylesheet" href="<?php echo $base_path?>css/roses.css">
+    <link rel="stylesheet" href="<?php echo $base_path?>css/carousel.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
     <title>Altos do Vale</title>
 </head>
 <body>
@@ -49,11 +52,29 @@
     <div class="rose">
         <img src="<?php echo $base_path?>images/petala2.png">
     </div>
-    <div class="rose">
+    <div class="rose hidden-mobile">
         <img src="<?php echo $base_path?>images/petala3.png">
     </div>
 </div>
-<section class="banners">
+<section class="carousel">
+    <div class="row mb-0">
+        <div class="col">
+            <div id="carousel-wrapper" class="w-100">
+                <?php foreach ($listaBanners as $banner): ?>
+                    <div>
+                        <div class="carousel-item">
+                            <div class="main-banner" data-src="<?php echo $banner['imagem_1']?>">
+                                <h1 class="text-white uppercase"><?php echo $banner['descricao']?></h1>
+                            </div>
+                            <div class="banner hidden-mobile" data-src="<?php echo $banner['imagem_2']?>"></div>
+                            <div class="banner hidden-mobile" data-src="<?php echo $banner['imagem_3']?>"></div>
+                        </div>
+                    </div>
+                <?php endforeach; ?>
+            </div>
+        </div>
+
+    </div>
 </section>
 <section class="chamada section-padding">
     <div class="container text-white">
@@ -68,7 +89,7 @@
                 <p>
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
                 </p>
-                <a href="#" type="button" class="btn-transparent uppercase mt-1" name="button">
+                <a href="#" type="button" class="btn-transparent uppercase mt-2" name="button">
                     Conheça a <strong>casa</strong>
                 </a>
             </div>
@@ -79,7 +100,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="gallery-wrapper">
-                <div class="gallery-image">
+                <div class="gallery-image hidden-mobile">
                     <img src="<?php echo $base_path?>images/gallery/image.jpg">
                 </div>
                 <div class="gallery-image">
@@ -91,10 +112,10 @@
                 <div class="gallery-image">
                     <img src="<?php echo $base_path?>images/gallery/image4.jpg">
                 </div>
-                <div class="gallery-image">
+                <div class="gallery-image hidden-mobile">
                     <img src="<?php echo $base_path?>images/gallery/image5.jpg">
                 </div>
-                <div class="gallery-image w-100">
+                <div class="gallery-image hidden-mobile">
                     <img src="<?php echo $base_path?>images/gallery/image6.jpg">
                 </div>
             </div>
@@ -125,7 +146,7 @@
             </div>
         </div>
         <div class="row">
-            <div class="col">
+            <div class="col-md-8 offset-md-2">
                 <form>
                     <input class="input-transparent" placeholder="NOME" aria-placeholder="Nome">
                     <div class="input-group">
@@ -139,37 +160,29 @@
 </section>
 <footer class="flex-center">
     <div class="container-fluid">
-        <div class="row mx-5 border-0">
+        <div class="row mx-5 mb-0 border-0">
             <div class="col-md-4">
                 <div class="row">
-                    <strong class="text-white mt-3">Nosso Endereço</strong>
-                    <br/>
-                    <span>Rua da Unidade 2800, Forqueta</span>
-                    <br/>
-                    <span>Caxias do Sul - Rio Grande do Sul</span>
-                </div>
-                <div class="row">
-                    <strong class="mt-3 text-white">Horários de Atendimento</strong>
-                    <br/>
-                    <span>
-                    <span class="fas fa-calendar text-white"></span>&nbsp; Terça a Sábado - 9h às 18h
-                </span>
-                    <br/>
-                    <span>
-                    <span class="fas fa-phone text-white"></span>&nbsp; (54) 3207.7015 | 99971.4179
-                </span>
+                    <div class="col wpAtendimento">
+                        <strong class="mb-2 text-white uppercase">Horários de Atendimento</strong>
+                        <br/>
+                        <span class="fas fa-calendar text-white"></span>
+                        <span>Terça a Sábado - 09hs às 18hs</span>
+                        <br/>
+                        <span class="fas fa-phone text-white"></span>
+                        <span>(54) 3207-7015 ou (54) 99971-4179</span>
+                    </div>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="row flex-center">
-                    <span class="text-white">
-                        <span class="fas fa-map-marked-alt fa-3x"></span>&nbsp;
-                        <strong class="uppercase">Visualize o mapa do</strong>
-                    </span>
-                    <br />
-                    <a href="#" class="navbar-logo mt-5" rel="noopener">
-                        <img src="<?php echo $base_path?>images/logo.png" alt="Logo Altos do Vale">
-                    </a>
+                    <div class="col flex-center">
+                        <span class="fas fa-map-marked-alt fa-4x text-white"></span>
+                        <a href="#" class="navbar-logo uppercase text-white ml-4" rel="noopener">
+                            <strong>Visualize o mapa do</strong>
+                            <h4>Altos do Vale</h4>
+                        </a>
+                    </div>
                 </div>
             </div>
             <div class="col-md-4">
@@ -210,7 +223,7 @@
 </footer>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/gh/stevenschobert/instafeed.js@1.4.1/instafeed.min.js"></script>
+<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 <script src="<?php echo $base_path?>/js/main.js"></script>
-<script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js" integrity="sha384-kW+oWsYx3YpxvjtZjFXqazFpA7UP/MbiY4jvs+RWZo2+N94PFZ36T6TFkc9O3qoB" crossorigin="anonymous"></script>
 </body>
 </html>
