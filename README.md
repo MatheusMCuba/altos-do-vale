@@ -1,3 +1,3 @@
 # Projeto Ezoom
 
-[Versão Hospedada](ezoom.matheuscuba.com.br)
+[Versão Hospedada](http:ezoom.matheuscuba.com.br)
