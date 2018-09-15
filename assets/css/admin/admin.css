@@ -1,0 +1,10 @@
+.banner-image{
+    width: 150px;
+    height: 70px;
+    background-size: cover !important;
+    position: relative;
+}
+
+.banner-image img{
+    width: 100%;
+}

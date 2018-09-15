@@ -2,31 +2,70 @@
     defined('BASEPATH') OR exit('No direct script access allowed');
     $base_path = base_url('/assets/');
 ?>
-<html lang="en" dir="ltr">
+<!doctype html> <!-- HTML5 -->
+<html lang="pt-BR" dir="ltr">
 <head>
+
+    <title>Altos do Vale</title>
+
+    <!--Meta Tags-->
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="<?php echo $base_path?>css/navbar.css">
-    <link rel="stylesheet" href="<?php echo $base_path?>css/grid.min.css">
-    <link rel="stylesheet" href="<?php echo $base_path?>css/style.css">
-    <link rel="stylesheet" href="<?php echo $base_path?>css/gallery.css">
-    <link rel="stylesheet" href="<?php echo $base_path?>css/roses.css">
-    <link rel="stylesheet" href="<?php echo $base_path?>css/carousel.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="description" content="Altos do Vale, casa de eventos na Serra Gaúcha">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="http://ezoom.matheuscuba.com.br">
+    <meta property="og:title" content="Altos do Vale">
+    <meta property="og:image" content="http://ezoom.matheuscuba.com.br/assets/images/logo.png">
+    <meta property="og:description" content="Altos do Vale, casa de eventos na Serra Gaúcha">
+    <meta property="og:site_name" content="Altos do Vale">
+    <meta property="og:locale" content="pt-BR">
+
+    <!--CSS Local-->
+    <link rel="stylesheet" href="<?php echo $base_path?>css/home/navbar.css">
+    <link rel="stylesheet" href="<?php echo $base_path?>css/home/grid.min.css">
+    <link rel="stylesheet" href="<?php echo $base_path?>css/home/style.css">
+    <link rel="stylesheet" href="<?php echo $base_path?>css/home/gallery.css">
+    <link rel="stylesheet" href="<?php echo $base_path?>css/home/roses.css">
+    <link rel="stylesheet" href="<?php echo $base_path?>css/home/carousel.css">
+    <link rel="stylesheet" href="<?php echo $base_path?>css/home/modal.css">
+
+    <!--CSS Externo-->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
-    <title>Altos do Vale</title>
 </head>
 <body>
+
+<!--Rosas-->
 <div class="roses">
     <img class="rose" src="<?php echo $base_path?>images/petala.png">
     <img class="rose" src="<?php echo $base_path?>images/petala2.png">
     <img class="rose hidden-mobile" src="<?php echo $base_path?>images/petala3.png">
 </div>
+
+<!--Modal-->
+<div class="modal hidden">
+    <div class="backdrop"></div>
+    <div class="modal-wrapper flex-center">
+        <img class="modal-rose" src="<?php echo $base_path?>images/petala.png">
+        <img class="modal-rose" src="<?php echo $base_path?>images/petala.png">
+        <div>
+            <h1 class="w-100">Dia dos Namorados</h1>
+            <p class="uppercase mt-3 w-100">
+                Aproveite o nosso almoço e faça um <span>tour</span> pelo Altos do Vale
+            </p>
+            <button class="close-modal">
+                <span class="fas fa-times fa-2x"></span>
+            </button>
+        </div>
+    </div>
+</div>
+
+<!--Header com Navbar-->
 <header>
     <div class="container-fluid">
         <div class="row">
-            <nav class="navbar flex-center">
-                <div class="flex-center space-around">
+            <nav class="navbar flex-center w-100">
+                <div class="flex-center space-between w-100">
                     <div id="btnMenu" class="menu-icon text-white">
                         <span class="fas fa-bars fa-3x"></span>
                     </div>
@@ -60,6 +99,8 @@
         </div>
     </div>
 </header>
+
+<!--Carousel com slick.js-->
 <section class="carousel">
     <div class="container-fluid">
         <div class="row mb-0">
@@ -85,7 +126,9 @@
         </div>
     </div>
 </section>
-<section class="chamada section-padding">
+
+<!--Section de Sobre-->
+<section class="about section-padding">
     <div class="container text-white">
         <div class="row">
             <div class="col">
@@ -105,6 +148,8 @@
         </div>
     </div>
 </section>
+
+<!--Galeria-->
 <section class="gallery">
     <div class="container-fluid">
         <div class="row">
@@ -131,6 +176,8 @@
         </div>
     </div>
 </section>
+
+<!--Imagens do Instagram-->
 <section class="instagram section-padding">
     <div class="container text-center">
         <div class="row">
@@ -146,6 +193,8 @@
         </div>
     </div>
 </section>
+
+<!--Newsletter Form-->
 <section class="newsletter section-padding">
     <div class="container text-center">
         <div class="row">
@@ -167,6 +216,8 @@
         </div>
     </div>
 </section>
+
+<!--Footer com informacoes-->
 <footer class="flex-center">
     <div class="container-fluid">
         <div class="row mx-5 mb-0 border-0">
@@ -230,9 +281,36 @@
         </div>
     </div>
 </footer>
+
+<!--jQuery 3.3.1-->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<!--Instafeed.js-->
 <script src="https://cdn.jsdelivr.net/gh/stevenschobert/instafeed.js@1.4.1/instafeed.min.js"></script>
+
+<!--slick.js-->
 <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+<!--Main.js-->
 <script src="<?php echo $base_path?>/js/main.js"></script>
+
+<!--LD Json-->
+<script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "Corporation",
+      "name": "Altos do Vale",
+      "url": "https://ezoom.matheuscuba.com.br",
+      "logo": "http://ezoom.matheuscuba.com.br/assets/images/logo.png",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+55 (54) 3207-7015",
+        "contactType": "reservations",
+        "areaServed": "BR",
+        "availableLanguage": "Portuguese"
+      },
+      "sameAs": "https://www.facebook.com/altosdovale/"
+    }
+</script>
 </body>
 </html>

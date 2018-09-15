@@ -7,36 +7,10 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Altos do Vale - Admin</title>
+
+    <link rel="stylesheet" href="<?php echo $base_path?>/css/admin/admin.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <style>
-        .banner-image{
-            width: 150px;
-            height: 70px;
-            background-size: cover !important;
-            position: relative;
-        }
-
-        .banner-image img{
-            width: 100%;
-            height: 100%;
-        }
-
-        .banner-image[data-temp]{
-            cursor: pointer;
-        }
-
-        .banner-image[data-temp]:hover::after{
-            content: '';
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
-            background-color: #ff0000;
-            opacity: .4;
-        }
-
-    </style>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 </head>
 <body>
     <div class="container">
@@ -101,7 +75,7 @@
 
                             <label>Descrição:</label>
                             <input class="form-control mb-2" name="descricao" id="descricao">
-                            <label>Arquivos: <small class="text-muted">(máximo 3)</small></label>
+                            <label>Imagens: <small class="text-muted">(necessário 3 arquivos)</small></label>
                             <br>
                             <button type="button" class="btn btn-outline-primary" onclick="$('#filesInput').click()">
                                 <span class="fas fa-upload"></span>&nbsp;
@@ -121,8 +95,6 @@
         </div>
     </div>
 
-
-    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js" integrity="sha384-kW+oWsYx3YpxvjtZjFXqazFpA7UP/MbiY4jvs+RWZo2+N94PFZ36T6TFkc9O3qoB" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>

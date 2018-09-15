@@ -7,16 +7,12 @@
     content: '';
     height: 159px;
     width: 154px;
-    background: url(../images/flare.png) no-repeat;
+    background: url(../../images/flare.png) no-repeat;
     background-size: cover;
     position: absolute;
-    bottom: -78px;
+    bottom: -88px;
     left: calc(50% - 85px);
     z-index: 20;
-}
-
-.navbar > div{
-    width: 80%;
 }
 
 .navbar ul{
@@ -53,6 +49,19 @@
     display: none;
 }
 
+.social{
+    color: #313131;
+}
+
+.social a{
+    width: 30px;
+    height: 30px;
+    background-color: #999;
+    border-radius: 50%;
+    margin-left: 5px;
+    font-size: 15px;
+}
+
 @media (max-width: 1200px) {
     .navbar::after{
         display: none;
@@ -65,8 +74,7 @@
         left: 0;
         width: 100%;
         z-index: 110;
-        background: url(../images/background.jpg);
-        background-size: 50% 50%;
+        background: url(../../images/background.jpg);
         height: 100px;
     }
 
@@ -105,8 +113,7 @@
         left: 0;
         display: initial !important;
         z-index: 1000;
-        background: url(../images/background.jpg);
-        background-size: 50% 50%;
+        background: url(../../images/background.jpg);
         min-height: 100%;
     }
 

@@ -13,9 +13,7 @@ function Main(){
         "resolution": "low_resolution",
         "template": "<a href=\"{{link}}\" data-src='{{image}}' target=\"_blank\"></a>",
         "after": function(){
-            $('[data-src]').each(function(){
-                $(this).css('background', 'url('+$(this).data('src')+')');
-            });
+            self.LoadImages();
         }
     };
 
@@ -41,11 +39,36 @@ function Main(){
         $('.sidebar').toggleClass('active');
     };
 
+    self.IsMobile = function(){
+        //Simples function para detectar browsers mobile
+        return "ontouchstart" in window;
+    };
+
+    self.ToggleModal = function(flag){
+        $('.modal').toggleClass('hidden', !flag);
+        setTimeout(function(){
+            $('.modal').toggle(flag);
+        }, !flag ? 300 : 0);
+    };
+
+    self.LoadImages = function(){
+        $('[data-src]').each(function(){
+            $(this).css('background', 'url('+$(this).data('src')+')');
+        });
+    };
+
     self.Init = (function(){
         self.InitInstafeed();
         self.InitCarousel();
+        self.LoadImages();
+
+        if(!self.IsMobile())
+            self.ToggleModal(true);
 
         $('#btnMenu').click(self.ToggleMenu);
+        $('button.close-modal,.backdrop').click(function(){
+            self.ToggleModal(false);
+        });
     })();
 }
 

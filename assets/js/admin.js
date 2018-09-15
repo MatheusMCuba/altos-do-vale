@@ -1,6 +1,8 @@
 function Admin(){
     let self = this;
 
+    self.ListaArquivos = [];
+
     self.RenumerarLista = function(){
         $('#wpBannersLista li').each(function(i){
             $(this).find('.cardinal').text('#' + (++i));
@@ -22,30 +24,58 @@ function Admin(){
         });
     };
 
+    self.MontarElementoImagemUpload = function(image){
+        let listElement = $('<div data-temp class="banner-image m-1"></div>');
+        let imageElement = $('<img>');
+        imageElement.attr('src', image)
+        listElement.append(imageElement);
+        return listElement;
+    };
+
+    self.MontarDadosBanner = function(){
+        let data = new FormData();
+        data.append('descricao', $('[name="descricao"]').val());
+        data.append('listaArquivos', self.ListaArquivos);
+        return data;
+    };
+
+    self.ValidarBanner = function(){
+        if(!$('#descricao').val()){
+            alert('Necessário Informar a Descrição');
+            $('#descricao').focus();
+            return false;
+        }
+        if($('[data-temp]').length != 3) {
+            alert('Necessário Informar 3 Imagens');
+            return false;
+        }
+
+        return true;
+    }
+
     self.AddEvents = function(){
         $('#filesInput').change(function(){
             if (this.files && this.files[0]) {
+                if($('[data-temp]').length >= 3){
+                    alert('Apenas 3 imagens permitidas!');
+                    return;
+                }
                 let arr = Array.from(this.files);
                 if(arr.length > 3)
                     arr = arr.slice(0, 3);
 
                 Array.from(this.files).forEach(function(file){
-                    var reader = new FileReader();
+                    let reader = new FileReader();
                     reader.onload = function (e) {
-                        let listElement = $('<div data-temp class="banner-image m-1"></div>');
-                        let imageElement = $('<img>');
-                        imageElement.attr('src', e.target.result)
-                        listElement.append(imageElement);
-                        $('#wpImages').append(listElement);
+                        let elemento = self.MontarElementoImagemUpload(e.target.result);
+                        $('#wpImages').append(elemento);
                     };
                     reader.readAsDataURL(file);
+                    self.ListaArquivos.push(file);
                 });
             }
         });
 
-        $(document).on('click', '.banner-image[data-temp]', function(){
-            $(this).remove();
-        });
 
         $(document).on('click', '.btnExcluir', function(){
             if(confirm('Tem certeza que quer excluir este Banner?'))
@@ -53,19 +83,20 @@ function Admin(){
         });
 
         $('form').submit(function(){
-            if(!$('#descricao').val()){
-                alert('Necessário Informar a Descrição');
-                $('#descricao').focus();
-                return false;
-            }
-            if($('[data-temp]').length != 3) {
-                alert('Necessário Informar 3 Imagens');
-                return false;
-            }
+            if(!self.ValidarBanner())
+                return;
 
-            document.body.style.cursor='wait';
-            $('#btnSalvar').attr('disabled', true);
+            self.ToggleCursorLoading(true);
         });
+    };
+
+    self.ToggleCursorLoading = function(flag){
+        if(flag)
+            document.body.style.cursor='wait';
+        else
+            document.body.style.cursor='unset';
+
+        $('#btnSalvar').attr('disabled', flag);
     };
 
     self.AtualizarPosicaoBanner = function(codigo, posicao){
