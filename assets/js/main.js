@@ -62,8 +62,7 @@ function Main(){
         self.InitCarousel();
         self.LoadImages();
 
-        if(!self.IsMobile())
-            self.ToggleModal(true);
+        self.ToggleModal(!self.IsMobile());
 
         $('#btnMenu').click(self.ToggleMenu);
         $('button.close-modal,.backdrop').click(function(){
