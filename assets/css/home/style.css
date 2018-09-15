@@ -43,7 +43,7 @@ p{
 
 /*Section About*/
 .about{
-	background: url(../../images/chamada.jpg) center no-repeat;
+	background: url(../../images/about.jpg) center no-repeat;
 	background-size: cover;
 	/*padding: 100px 250px;*/
     text-align: center;
@@ -186,13 +186,13 @@ footer .ezoom{
 		font-size: 1.2rem;
 	}
 
-	.chamada h1:after {
+	.about h1:after {
 		content: '';
 		top: -107px;
 		left: 16px;
 	}
 
-	.chamada p{
+	.about p{
 		padding: 0 35px;
 		font-size: 11px;
 		line-height: 15px;
